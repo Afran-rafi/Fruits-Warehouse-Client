@@ -1,4 +1,8 @@
 import React from 'react';
+import './Carousel.css'
+import banner1 from '../../Images/Banner1.webp'
+import banner2 from '../../Images/Banner2.webp'
+import banner3 from '../../Images/Banner3.webp'
 
 const Carousel = () => {
     return (
@@ -13,40 +17,34 @@ const Carousel = () => {
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <div className="row align-items-center p-5 carousel-back">
-                                <div className="col-lg-7">
-                                    <h1>Cool Dude Headphone</h1>
-                                    <p>This is the best headphone in the world for people who just want to waste time in front of funky world.</p>
-                                    <h2 className="colorrr">$420</h2>
-                                    <button type="button" className="btn buttonnn">Warning</button>
+                                <div className="col-lg-4">
+                                    <h1 className='carousel-font'><span className='font-color'>100%</span> Fresh Foods Dear</h1>
+                                    <p>This is the best Food Grocery Dear.100% authentic and Fresh food dear.</p>
                                 </div>
-                                <div className="col-lg-5">
-                                    <img src="Image/headphone.png" className="d-block w-100" alt="..." />
+                                <div className="col-lg-7">
+                                    <img src={banner1} className=" w-100 banner1" alt="..." />
                                 </div>
                             </div>
                         </div>
                         <div className="carousel-item">
                             <div className="row align-items-center p-5 carousel-back">
-                                <div className="col-lg-7">
-                                    <h1>Mega LCD TV For Sports</h1>
-                                    <p>This is the best TV in the world for people who just want to waste time in front of Tv</p>
-                                    <h2 className="colorrr">$420</h2>
-                                    <button type="button" className="btn buttonnn">Warning</button>
-                                </div>
                                 <div className="col-lg-5">
-                                    <img src="Image/tv.png" className="d-block w-100" alt="..." />
+                                    <h1 className='carousel-font'><span className='font-color'>100% Authentic</span> Grocery Baby</h1>
+                                    <p>Maintains Hygienic Packaging , Storage and Home Delivery.</p>
+                                </div>
+                                <div className="col-lg-7">
+                                    <img src={banner2} className="w-100 banner2" alt="..." />
                                 </div>
                             </div>
                         </div>
                         <div className="carousel-item">
                             <div className="row align-items-center p-5 carousel-back">
-                                <div className="col-lg-7">
-                                    <h1>X-box for your living room</h1>
-                                    <p>This is the best X-box in the world for people who just want to waste time in front of fake sports.</p>
-                                    <h2 className="colorrr">$420</h2>
-                                    <button type="button" className="btn buttonnn">Warning</button>
-                                </div>
                                 <div className="col-lg-5">
-                                    <img src="Image/xbox.png" className="d-block w-100" alt="..." />
+                                    <h1 className='carousel-font'><span className='font-color'>Fresh products</span> directly to your door</h1>
+                                    <p>Top-quality fresh Foods. Properly packed.and free delivery dear..</p>
+                                </div>
+                                <div className="col-lg-7">
+                                    <img src={banner3} className="d-block w-100" alt="..." />
                                 </div>
                             </div>
                         </div>

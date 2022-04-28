@@ -3,6 +3,10 @@ li{
     list-style: none;
 }
 
+.navbar-margin{
+    margin-left: 60px;
+}
+
 .uNone{
     text-decoration: none !important;
 }
@@ -10,6 +14,7 @@ li{
 .left{
     margin-top: 10px;
     padding: auto;
+    margin-right: 60px;
 }
 
 .login-btn{
@@ -29,5 +34,9 @@ li{
     }
     .left{
         margin-top: 0px;
+        margin-right: 0;
+    }
+    .navbar-margin{
+        margin-left: 0px;
     }
 }

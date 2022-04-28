@@ -8,7 +8,7 @@ const Menubar = () => {
         <div>
             <nav className="navbar navbar-expand-lg navbar-light fixed-top shadow">
                 <div className="container-fluid">
-                    <div>
+                    <div className='navbar-margin'>
                         <img src={logo} alt="" />
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
