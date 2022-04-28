@@ -1,0 +1,33 @@
+li{
+    margin-left: 20px;
+    list-style: none;
+}
+
+.uNone{
+    text-decoration: none !important;
+}
+
+.left{
+    margin-top: 10px;
+    padding: auto;
+}
+
+.login-btn{
+    background-color: #0ec22ce5;
+    padding: 5px 20px;
+    border: none;
+    color: white !important;
+}
+
+.login-btn:hover{
+    background-color: #059e05;
+}
+
+@media screen and (max-width: 600px) {
+    li{
+        text-align: center;
+    }
+    .left{
+        margin-top: 0px;
+    }
+}
