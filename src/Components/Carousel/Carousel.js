@@ -7,7 +7,7 @@ import banner3 from '../../Images/Banner3.webp'
 const Carousel = () => {
     return (
         <div>
-            <section className="container mt-5">
+            <section className="container">
                 <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -18,8 +18,8 @@ const Carousel = () => {
                         <div className="carousel-item active">
                             <div className="row align-items-center p-5 carousel-back">
                                 <div className="col-lg-4">
-                                    <h1 className='carousel-font'><span className='font-color'>100%</span> Fresh Foods Dear</h1>
-                                    <p>This is the best Food Grocery Dear.100% authentic and Fresh food dear.</p>
+                                    <h1 className='carousel-font'><span className='font-color'>100%</span> Fresh Fruits Dear</h1>
+                                    <p>This is the best Fruits Warehouse Dear.100% authentic and Fresh fruits dear.</p>
                                 </div>
                                 <div className="col-lg-7">
                                     <img src={banner1} className=" w-100 banner1" alt="..." />
@@ -29,7 +29,7 @@ const Carousel = () => {
                         <div className="carousel-item">
                             <div className="row align-items-center p-5 carousel-back">
                                 <div className="col-lg-5">
-                                    <h1 className='carousel-font'><span className='font-color'>100% Authentic</span> Grocery Baby</h1>
+                                    <h1 className='carousel-font'><span className='font-color'>100% Authentic</span> warehouse Baby</h1>
                                     <p>Maintains Hygienic Packaging , Storage and Home Delivery.</p>
                                 </div>
                                 <div className="col-lg-7">
@@ -40,8 +40,8 @@ const Carousel = () => {
                         <div className="carousel-item">
                             <div className="row align-items-center p-5 carousel-back">
                                 <div className="col-lg-5">
-                                    <h1 className='carousel-font'><span className='font-color'>Fresh products</span> directly to your door</h1>
-                                    <p>Top-quality fresh Foods. Properly packed.and free delivery dear..</p>
+                                    <h1 className='carousel-font'><span className='font-color'>Fresh Fruits</span> directly to your door</h1>
+                                    <p>Top-quality fresh Fruits. Properly packed.and free delivery dear..</p>
                                 </div>
                                 <div className="col-lg-7">
                                     <img src={banner3} className="d-block w-100" alt="..." />
