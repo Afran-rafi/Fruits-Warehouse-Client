@@ -14,7 +14,7 @@ const InItems = (props) => {
             <CardGroup className='shadow p-1 mb-5 bg-body rounded'>
                 <Card>
                     <div>
-                        <Card.Img variant="white border img-fluid" src={img} />
+                        <Card.Img variant="white img-fluid" src={img} />
                     </div>
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>

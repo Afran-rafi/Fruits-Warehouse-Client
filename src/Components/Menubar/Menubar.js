@@ -17,7 +17,7 @@ const Menubar = () => {
                 <div className="container-fluid">
                     <div className='navbar-margin d-flex justify-content-center align-items-center'>
                         <img src={logo} alt="" />
-                        <p className='fw-bold font-size'>WereHouse</p>
+                        <p className='fw-bold font-size'>Were<span className='text-success'>House</span></p>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@ const Menubar = () => {
                                 <CustomLink className='uNone' to='/inventory'>Inventory</CustomLink>
                             </li>
                             <li className="nav-item">
-                                <CustomLink className='uNone' to='/about'>About</CustomLink>
+                                <CustomLink className='uNone' to='/about'>Blogs</CustomLink>
                             </li>
                             <li className="nav-item">
                                 <CustomLink className='uNone' to='/addUser'>Add User</CustomLink>

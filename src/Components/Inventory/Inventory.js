@@ -12,8 +12,8 @@ const Inventory = () => {
     return (
         <div className='container'>
             <div className='in-margin container'>
-                <h2 className='text-center'>Inventory Items</h2>
-                <div className='grid mt-4'>
+                <h2 className='text-center text-success'>Inventory Items</h2>
+                <div className='grid mt-5'>
                     {
                         Items.map(item => <InItems
                             key={item._id}
