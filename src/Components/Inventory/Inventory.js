@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import InItems from '../InItems/InItems';
 import './Inventory.css'
 
 const Inventory = () => {
+    const [Items, setItems] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/inventory')
+            .then(res => res.json())
+            .then(data => setItems(data))
+    }, [])
     return (
-        <div className='container inventory'>
-
+        <div className='container'>
+            <div className='in-margin container'>
+                <h2 className='text-center'>Inventory Items</h2>
+                <div className='grid mt-4'>
+                    {
+                        Items.map(item => <InItems
+                            key={item._id}
+                            item={item} >
+                        </InItems>)
+                    }
+                </div>
+            </div>
         </div>
     );
 };

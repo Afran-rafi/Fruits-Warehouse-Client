@@ -2,8 +2,15 @@ import React from 'react';
 import './Menubar.css'
 import CustomLink from '../CustomLink/CustomLink';
 import logo from '../../Images/Grocery-Logo.jpg'
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 
 const Menubar = () => {
+    const [user] = useAuthState(auth)
+    const logout = () => {
+        signOut(auth);
+    }
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg fixed-top shadow">
@@ -35,7 +42,10 @@ const Menubar = () => {
                         </ul>
                         <ul>
                             <li className="nav-item ms-auto left">
-                                <CustomLink className='uNone login-btn rounded' to='/login'><span className='text-shadow'>Login</span></CustomLink>
+                                {user ?
+                                    <button onClick={logout} className='login-btn fw-bold'>Sign Out</button>
+                                    :
+                                    <CustomLink className='uNone login-btn rounded' to='/login'><span className='text-shadow'>Login</span></CustomLink>}
                             </li>
                         </ul>
                     </div>
