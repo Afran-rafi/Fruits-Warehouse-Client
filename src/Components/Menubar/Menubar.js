@@ -6,7 +6,7 @@ import logo from '../../Images/Grocery-Logo.jpg'
 const Menubar = () => {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light fixed-top shadow">
+            <nav className="navbar navbar-expand-lg navbar-light bg fixed-top shadow">
                 <div className="container-fluid">
                     <div className='navbar-margin d-flex justify-content-center align-items-center'>
                         <img src={logo} alt="" />
