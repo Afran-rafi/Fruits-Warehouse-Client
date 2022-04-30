@@ -33,33 +33,35 @@ const AddFruits = () => {
             })
     }
     return (
-        <div className='fruits d-flex justify-content-center'>
-            {/* <h3 className='text-center mt-3 text-success'>Add Fruits Dear</h3> */}
-            <form onSubmit={handleAddFruits} className='fruits-container mt-5 p-3 shadow'>
-                <div className='d-flex justify-content-center flex-column line mt-4'>
-                    <label className='fw-bold' htmlFor="img">Image URL</label><br />
-                    <input ref={imgRef} type="text" name="img" id="1" required />
-                </div>
-                <div className='d-flex justify-content-center flex-column line mt-4'>
-                    <label className='fw-bold' htmlFor="">Name</label><br />
-                    <input ref={nameRef} type="text" name="name" id="2" required />
-                </div>
-                <div className='d-flex justify-content-center flex-column line mt-4'>
-                    <label className='fw-bold' htmlFor="">Price</label><br />
-                    <input ref={priceRef} type="number" name="number" id="2" required />
-                </div>
-                <div className='d-flex justify-content-center flex-column line mt-4'>
-                    <label className='fw-bold' htmlFor="">Quantity</label><br />
-                    <input ref={quantityRef} type="number" name="quantity" id="2" required />
-                </div>
-                <div className='d-flex justify-content-center flex-column line mt-4'>
-                    <label className='fw-bold' htmlFor="">SupplierName</label><br />
-                    <input ref={supplierRef} type="text" name="supplierName" id="2" required />
-                </div> <br />
-                <div className='d-flex justify-content-center'>
-                    <input className='login-btn' type="submit" value="Add Fruits" />
-                </div>
-            </form>
+        <div>
+            <h3 className=' text-success margin-text text-center'>Please!! Add a New Fruits Items</h3>
+            <div className=' d-flex fruits justify-content-center'>
+                <form onSubmit={handleAddFruits} className='fruits-container mt-3 p-3 shadow'>
+                    <div className='d-flex justify-content-center flex-column line mt-4'>
+                        <label className='fw-bold' htmlFor="img">Image URL</label><br />
+                        <input ref={imgRef} type="text" name="img" id="1" required />
+                    </div>
+                    <div className='d-flex justify-content-center flex-column line mt-4'>
+                        <label className='fw-bold' htmlFor="">Name</label><br />
+                        <input ref={nameRef} type="text" name="name" id="2" required />
+                    </div>
+                    <div className='d-flex justify-content-center flex-column line mt-4'>
+                        <label className='fw-bold' htmlFor="">Price</label><br />
+                        <input ref={priceRef} type="number" name="number" id="2" required />
+                    </div>
+                    <div className='d-flex justify-content-center flex-column line mt-4'>
+                        <label className='fw-bold' htmlFor="">Quantity</label><br />
+                        <input ref={quantityRef} type="number" name="quantity" id="2" required />
+                    </div>
+                    <div className='d-flex justify-content-center flex-column line mt-4'>
+                        <label className='fw-bold' htmlFor="">SupplierName</label><br />
+                        <input ref={supplierRef} type="text" name="supplierName" id="2" required />
+                    </div> <br />
+                    <div className='d-flex justify-content-center'>
+                        <input className='login-btn' type="submit" value="Add Fruits" />
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };

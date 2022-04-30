@@ -3,8 +3,8 @@ import { Card, CardGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './InItems.css'
 
-const InItems = (props) => {
-    const { name, price, description, img, _id, quantity, supplierName } = props.item
+const InItems = ({ item, handleDelete }) => {
+    const { name, price, description, img, _id, quantity, supplierName } = item
     const navigate = useNavigate()
     const handleDetails = (id) => {
         navigate(`/inventory/${_id}`)
@@ -25,7 +25,7 @@ const InItems = (props) => {
                     </Card.Body>
                     <div className='d-flex justify-content-between card-footer'>
                         <button onClick={() => handleDetails(_id)} className='border-0 btn-dark all-btn'>Update</button>
-                        <button className='border-0 btn-dark all-btn'>Delete</button>
+                        <button onClick={() => handleDelete(_id)} className='border-0 btn-dark all-btn'>Delete</button>
                     </div>
                 </Card>
             </CardGroup>

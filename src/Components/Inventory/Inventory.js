@@ -10,6 +10,22 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure baby?');
+        if (proceed) {
+            const url = `http://localhost:5000/inventory/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remaining = Items.filter(item => item._id !== id);
+                    setItems(remaining);
+                })
+        }
+    }
     return (
         <div className='container'>
             <div className='in-margin container'>
@@ -18,7 +34,8 @@ const Inventory = () => {
                     {
                         Items.map(item => <InItems
                             key={item._id}
-                            item={item} >
+                            item={item}
+                            handleDelete={handleDelete}>
                         </InItems>)
                     }
                 </div>
