@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CustomLink from '../CustomLink/CustomLink';
 import InItems from '../InItems/InItems';
 import './Inventory.css'
 
@@ -20,6 +21,9 @@ const Inventory = () => {
                             item={item} >
                         </InItems>)
                     }
+                </div>
+                <div className='mb-5 d-flex justify-content-center align-items-center'>
+                    <CustomLink to='/addFruits'><button className='login-btn'>Add New Fruits Item</button></CustomLink>
                 </div>
             </div>
         </div>

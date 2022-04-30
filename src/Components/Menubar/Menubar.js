@@ -31,10 +31,10 @@ const Menubar = () => {
                                 <CustomLink className='uNone' to='/inventory'>Inventory</CustomLink>
                             </li>
                             <li className="nav-item">
-                                <CustomLink className='uNone' to='/about'>Blogs</CustomLink>
+                                <CustomLink className='uNone' to='/double'>Manage-in</CustomLink>
                             </li>
                             <li className="nav-item">
-                                <CustomLink className='uNone' to='/addUser'>Add User</CustomLink>
+                                <CustomLink className='uNone' to='/about'>Blogs</CustomLink>
                             </li>
                             <li className="nav-item">
                                 <CustomLink className='uNone' to='/updateUser'>Update User</CustomLink>

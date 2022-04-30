@@ -7,6 +7,9 @@ import Inventory from './Components/Inventory/Inventory';
 import Login from './Components/Login/Login';
 import SignUp from './Components/SignUp/SignUp';
 import PageError from './Components/PageError/PageError';
+import Update from './Components/Update/Update';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
+import AddFruits from './Components/AddFruits/AddFruits';
 
 function App() {
   return (
@@ -15,8 +18,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
-        <Route path='' element></Route>
-        <Route path='' element></Route>
+        <Route path='/inventory/:inventoryId' element={<RequireAuth><Update></Update></RequireAuth>}></Route>
+        <Route path='/addFruits' element={<AddFruits></AddFruits>}></Route>
         <Route path='signUp' element={<SignUp></SignUp>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='*' element={<PageError></PageError>}></Route>

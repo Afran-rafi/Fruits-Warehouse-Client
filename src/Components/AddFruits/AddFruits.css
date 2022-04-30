@@ -1,0 +1,10 @@
+.fruits-container{
+    width: 600px;
+    height: 530px;
+    border-radius: 10px;
+}
+
+.fruits{
+    height: 100vh;
+    margin-top: 4%;
+}

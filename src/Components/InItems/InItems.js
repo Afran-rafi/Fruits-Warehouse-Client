@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import './InItems.css'
 
 const InItems = (props) => {
-    const { name, price, description, img, _id } = props.item
+    const { name, price, description, img, _id, quantity, supplierName } = props.item
     const navigate = useNavigate()
     const handleDetails = (id) => {
-        navigate(`/service/${name}`)
+        navigate(`/inventory/${_id}`)
     }
     return (
         <div>
@@ -20,8 +20,13 @@ const InItems = (props) => {
                         <Card.Title>{name}</Card.Title>
                         <h6>Price: ${price}</h6>
                         <p>{description}</p>
+                        <p><span className='fw-bold'>Quantity/In-Stock:</span> <span className='text-danger fw-bold'> {quantity} KG</span></p>
+                        <p><span className='fw-bold'>SupplierName:</span> {supplierName}</p>
                     </Card.Body>
-                    <button onClick={() => handleDetails(_id)} className='border-0 p-2 btn-orchid'>Add:- {name} </button>
+                    <div className='d-flex justify-content-between card-footer'>
+                        <button onClick={() => handleDetails(_id)} className='border-0 btn-dark all-btn'>Update</button>
+                        <button className='border-0 btn-dark all-btn'>Delete</button>
+                    </div>
                 </Card>
             </CardGroup>
         </div>
