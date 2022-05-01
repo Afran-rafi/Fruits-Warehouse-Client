@@ -10,6 +10,7 @@ import PageError from './Components/PageError/PageError';
 import Update from './Components/Update/Update';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import AddFruits from './Components/AddFruits/AddFruits';
+import MyItems from './Components/MyItems/MyItems';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
         <Route path='/inventory/:inventoryId' element={<RequireAuth><Update></Update></RequireAuth>}></Route>
-        <Route path='/addFruits' element={<AddFruits></AddFruits>}></Route>
+        <Route path='/addFruits' element={<RequireAuth><AddFruits></AddFruits></RequireAuth>}></Route>
+        <Route path='/myItems' element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>
         <Route path='signUp' element={<SignUp></SignUp>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='*' element={<PageError></PageError>}></Route>
