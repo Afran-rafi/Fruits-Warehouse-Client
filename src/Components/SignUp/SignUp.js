@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.css'
 import sign from '../../Images/login.webp'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import CustomLink from '../CustomLink/CustomLink';
@@ -13,6 +13,8 @@ const SignUp = () => {
     const [cPassword, setCPassword] = useState('')
 
     const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
 
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
@@ -30,7 +32,7 @@ const SignUp = () => {
         await createUserWithEmailAndPassword(email, password, cPassword)
     }
     if (user) {
-        navigate('/login')
+        navigate(from, { replace: true })
     }
     if (loading) {
         return <p className='text-center text-warning'>Loading...</p>;

@@ -5,6 +5,7 @@ import './Update.css'
 
 const Update = () => {
     const { inventoryId } = useParams();
+
     const [Items, setItems] = useState({});
 
     useEffect(() => {
@@ -13,7 +14,7 @@ const Update = () => {
             .then(res => res.json())
             .then(data => setItems(data));
 
-    }, [])
+    }, [Items])
 
     const handleFruitsUpdate = (e) => {
         const quantity = e.target.quantity.value
@@ -34,6 +35,24 @@ const Update = () => {
                 e.target.reset();
             })
     }
+
+    const handleDeliver = id => {
+        const quantityUpdate = Items?.quantity
+        const updateQuantity = { quantityUpdate }
+        fetch(`http://localhost:5000/items/deliver/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data)
+            })
+    }
+
+
     return (
         <div>
             <div className="row">
@@ -58,7 +77,7 @@ const Update = () => {
                                 <p><span className='fw-bold'>Time: </span>{Items.Time}</p>
                             </div>
                         </Card.Body>
-                        <button className='border-0 p-2 btn-dark'>Delivered</button>
+                        <button onClick={() => handleDeliver(inventoryId)} className='border-0 p-2 btn-dark'>Delivered</button>
                     </Card>
                 </div>
 
@@ -73,8 +92,8 @@ const Update = () => {
                     </form>
                 </div>
 
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 

@@ -34,10 +34,16 @@ const Menubar = () => {
                                 <CustomLink className='uNone' to='/about'>Blogs</CustomLink>
                             </li>
                             <li className="nav-item">
-                                <CustomLink className='uNone' to='/addFruits'>AddFruits</CustomLink>
+                                {
+                                    user &&
+                                    <CustomLink className='uNone' to='/addFruits'>AddFruits</CustomLink>
+                                }
                             </li>
                             <li className="nav-item">
-                                <CustomLink className='uNone' to='/myItems'>My Items</CustomLink>
+                                {
+                                    user &&
+                                    <CustomLink className='uNone' to='/myItems'>My Items</CustomLink>
+                                }
                             </li>
                         </ul>
                         <ul>
@@ -49,9 +55,9 @@ const Menubar = () => {
                             </li>
                         </ul>
                     </div>
-                </div>
-            </nav>
-        </div>
+                </div >
+            </nav >
+        </div >
     );
 };
 

@@ -46,31 +46,31 @@ const AddFruits = () => {
             <div className=' d-flex fruits justify-content-center'>
                 <form onSubmit={handleAddFruits} className='fruits-container mt-3 p-3 shadow'>
                     <div className='d-flex justify-content-center flex-column line mt-4'>
-                        <label className='fw-bold' htmlFor="email">UserEmail</label><br />
-                        <input type="email" value={user.email} name="email" id="1" required readOnly />
+                        <label className='fw-bold' htmlFor="email">UserEmail*</label><br />
+                        <input className='fw-bold text-secondary' type="email" value={user.email} name="email" id="1" required readOnly />
                     </div>
                     <div className='d-flex justify-content-center flex-column line mt-4'>
-                        <label className='fw-bold' htmlFor="img">Image URL</label><br />
+                        <label className='fw-bold' htmlFor="img">Image URL*</label><br />
                         <input ref={imgRef} type="text" name="img" id="1" required />
                     </div>
                     <div className='d-flex justify-content-center flex-column line mt-4'>
-                        <label className='fw-bold' htmlFor="">Name</label><br />
+                        <label className='fw-bold' htmlFor="">Name*</label><br />
                         <input ref={nameRef} type="text" name="name" id="2" required />
                     </div>
                     <div className='d-flex justify-content-center flex-column line mt-4'>
-                        <label className='fw-bold' htmlFor="">Price</label><br />
+                        <label className='fw-bold' htmlFor="">Price*</label><br />
                         <input ref={priceRef} type="number" name="number" id="2" required />
                     </div>
                     <div className='d-flex justify-content-center flex-column line mt-4'>
-                        <label className='fw-bold' htmlFor="">Description</label><br />
+                        <label className='fw-bold' htmlFor="">Description*</label><br />
                         <input ref={descriptionRef} type="text" name="description" id="2" required />
                     </div>
                     <div className='d-flex justify-content-center flex-column line mt-4'>
-                        <label className='fw-bold' htmlFor="">Quantity</label><br />
+                        <label className='fw-bold' htmlFor="">Quantity*</label><br />
                         <input ref={quantityRef} type="number" name="quantity" id="2" required />
                     </div>
                     <div className='d-flex justify-content-center flex-column line mt-4'>
-                        <label className='fw-bold' htmlFor="">SupplierName</label><br />
+                        <label className='fw-bold' htmlFor="">SupplierName*</label><br />
                         <input ref={supplierRef} type="text" name="supplierName" id="2" required />
                     </div> <br />
                     <div className='d-flex justify-content-center'>
