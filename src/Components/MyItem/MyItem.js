@@ -2,8 +2,8 @@ import React from 'react';
 import { Card, CardGroup } from 'react-bootstrap';
 import './MyItem.css'
 
-const MyItem = ({ myItem }) => {
-    const { userEmail, name, price, description, img, quantity, supplierName } = myItem
+const MyItem = ({ myItem, handleItemDelete }) => {
+    const { userEmail, name, price, description, img, quantity, supplierName, _id } = myItem
     return (
         <div>
             <CardGroup className='shadow p-1 mb-5 bg-body rounded'>
@@ -19,9 +19,7 @@ const MyItem = ({ myItem }) => {
                         <p><span className='fw-bold'>Quantity/In-Stock:</span> <span className='text-danger fw-bold'> {quantity} KG</span></p>
                         <p><span className='fw-bold'>SupplierName:</span> {supplierName}</p>
                     </Card.Body>
-                    {/* <div className='d-flex justify-content-between card-footer'>
-                        <button onClick={() => handleDelete(_id)} className='border-0 btn-dark all-btn'>Delete</button>
-                    </div> */}
+                    <button onClick={() => handleItemDelete(_id)} className='border-0 btn-dark p-2'>Delete</button>
                 </Card>
             </CardGroup>
         </div >

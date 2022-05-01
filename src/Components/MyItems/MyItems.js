@@ -9,6 +9,21 @@ const MyItems = () => {
             .then(res => res.json())
             .then(data => setMyItems(data))
     }, [])
+
+    const handleItemDelete = id => {
+        const proceed = window.confirm('Are you sure baby?');
+        if (proceed) {
+            const url = `http://localhost:5000/myItems/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    const remaining = myItems.filter(myItem => myItem._id !== id);
+                    setMyItems(remaining);
+                })
+        }
+    }
     return (
         <div className='inn-margin container'>
             <h2 className='text-center text-success'>My Items</h2>
@@ -17,6 +32,7 @@ const MyItems = () => {
                     myItems.map(myItem => <MyItem
                         key={myItem._id}
                         myItem={myItem}
+                        handleItemDelete={handleItemDelete}
                     ></MyItem>)
                 }
             </div>
