@@ -13,4 +13,8 @@
         display: grid;
         grid-template-columns: repeat(1 ,1fr);
     }
+
+    .in-margin{
+        margin-top: 35%;
+    }
 }
