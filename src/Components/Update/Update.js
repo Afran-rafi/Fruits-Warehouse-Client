@@ -17,7 +17,7 @@ const Update = () => {
     }, [Items])
 
     const handleFruitsUpdate = (e) => {
-        const quantity = e.target.quantity.value
+        const quantity = parseInt(e.target.quantity.value) + parseInt(Items.quantity)
         const updateFruits = { quantity }
 
         const url = `http://localhost:5000/inventory/${inventoryId}`;
