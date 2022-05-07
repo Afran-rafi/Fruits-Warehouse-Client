@@ -22,9 +22,9 @@ const AddFruits = () => {
         const quantity = quantityRef.current.value
         const supplierName = supplierRef.current.value
         const description = descriptionRef.current.value
-        const userEmail = e.target.email.value
+        const email = e.target.email.value
 
-        const addFruits = { img, name, price, quantity, supplierName, description, userEmail };
+        const addFruits = { img, name, price, quantity, supplierName, description, email };
 
         fetch('http://localhost:5000/myItems', {
             method: 'POST',
