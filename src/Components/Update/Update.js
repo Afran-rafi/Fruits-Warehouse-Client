@@ -5,7 +5,6 @@ import './Update.css'
 
 const Update = () => {
     const { inventoryId } = useParams();
-
     const [Items, setItems] = useState({});
 
     useEffect(() => {
@@ -30,8 +29,8 @@ const Update = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
-                alert('Quantity update successfully!!!');
+                console.log("success", result);
+                alert('Quantity Update Successful');
                 e.target.reset();
             })
     }
@@ -77,7 +76,15 @@ const Update = () => {
                                 <p><span className='fw-bold'>Time: </span>{Items.Time}</p>
                             </div>
                         </Card.Body>
-                        <button onClick={() => handleDeliver(inventoryId)} className='border-0 p-2 btn-dark'>Delivered</button>
+
+                        {
+                            Items.quantity === 0 ?
+                                <button className='btn-danger border-0 text-white p-2'>sold out</button>
+                                :
+                                <button onClick={() => handleDeliver(inventoryId)} className='border-0 p-2 btn-dark'>Delivered</button>
+                        }
+
+
                     </Card>
                 </div>
 
