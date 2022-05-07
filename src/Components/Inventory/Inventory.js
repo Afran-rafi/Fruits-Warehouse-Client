@@ -6,7 +6,7 @@ import './Inventory.css'
 const Inventory = () => {
     const [Items, setItems] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/inventory')
+        fetch('https://serene-temple-04971.herokuapp.com/inventory')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
@@ -14,7 +14,7 @@ const Inventory = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure baby?');
         if (proceed) {
-            const url = `http://localhost:5000/inventory/${id}`;
+            const url = `https://serene-temple-04971.herokuapp.com/inventory/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

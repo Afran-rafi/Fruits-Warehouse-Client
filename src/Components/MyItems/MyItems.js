@@ -11,7 +11,7 @@ const MyItems = () => {
     useEffect(() => {
         const getItems = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/myItems?email=${email}`;
+            const url = `https://serene-temple-04971.herokuapp.com/myItems?email=${email}`;
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -26,7 +26,7 @@ const MyItems = () => {
     const handleItemDelete = id => {
         const proceed = window.confirm('Are you sure baby?');
         if (proceed) {
-            const url = `http://localhost:5000/myItems/${id}`;
+            const url = `https://serene-temple-04971.herokuapp.com/myItems/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

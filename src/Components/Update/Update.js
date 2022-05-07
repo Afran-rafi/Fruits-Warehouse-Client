@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import CustomLink from '../CustomLink/CustomLink';
 import './Update.css'
 
 const Update = () => {
@@ -8,7 +9,7 @@ const Update = () => {
     const [Items, setItems] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        const url = `https://serene-temple-04971.herokuapp.com/inventory/${inventoryId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItems(data));
@@ -16,10 +17,11 @@ const Update = () => {
     }, [Items])
 
     const handleFruitsUpdate = (e) => {
+        e.preventDefault()
         const quantity = parseInt(e.target.quantity.value) + parseInt(Items.quantity)
         const updateFruits = { quantity }
 
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        const url = `https://serene-temple-04971.herokuapp.com/inventory/${inventoryId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -38,7 +40,7 @@ const Update = () => {
     const handleDeliver = id => {
         const quantityUpdate = Items?.quantity
         const updateQuantity = { quantityUpdate }
-        fetch(`http://localhost:5000/items/deliver/${id}`, {
+        fetch(`https://serene-temple-04971.herokuapp.com/items/deliver/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -98,8 +100,10 @@ const Update = () => {
                         <input className='border-0 btn-dark' type="submit" value="increase" />
                     </form>
                 </div>
-
             </div >
+            <div className='mb-5 d-flex justify-content-center align-items-center'>
+                <CustomLink to='/inventory'><button className='login-btn'>Inventory Page</button></CustomLink>
+            </div>
         </div >
     );
 };
