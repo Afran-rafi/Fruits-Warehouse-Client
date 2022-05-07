@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import axiosPrivate from '../api/axiosPrivate';
 import MyItem from '../MyItem/MyItem';
 import './MyItems.css'
-import axios from 'axios';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
@@ -12,12 +12,13 @@ const MyItems = () => {
         const getItems = async () => {
             const email = user.email;
             const url = `https://serene-temple-04971.herokuapp.com/myItems?email=${email}`;
-            const { data } = await axios.get(url, {
-                headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            })
-            setMyItems(data)
+            try {
+                const { data } = await axiosPrivate.get(url);
+                setMyItems(data);
+            }
+            catch (error) {
+                console.log(error.message);
+            }
         }
         getItems();
 
@@ -49,7 +50,7 @@ const MyItems = () => {
                     ></MyItem>)
                 }
             </div>
-        </div>
+        </div >
     );
 };
 
